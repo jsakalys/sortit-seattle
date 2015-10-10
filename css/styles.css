@@ -1,0 +1,65 @@
+div {
+	border: solid 1px black;
+	text-align: center;
+	box-sizing: border-box;
+}
+
+#title {
+	height: 100px;
+}
+
+#game {
+	height: 400px;
+}
+
+#trash-chute {
+	display: inline-block;
+	height: 100px;
+	width: 100px;
+	margin-top: 100px;
+	overflow: hidden;
+	position: relative;
+}
+
+#options {
+	height: 50px;
+}
+
+#bins {
+	margin-top: 100px;
+}
+
+#blue-bin, #green-bin, #gray-bin {
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+}
+
+.blue-item {
+	background-color: lightBlue;
+	float: left;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.green-item {
+	background-color: lightGreen;
+	float: left;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.gray-item {
+	background-color: lightGray;
+	float: left;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+#footer {
+	height: 300px;
+}
+
