@@ -15,9 +15,19 @@ var itemsSorted = 0;
 
 var currentRound = 0;
 
-// Make intervalID for current round
+// Make intervalID generating trash
 
 var intervalID = -1;
+
+// Make timeoutID for one round
+
+var timeoutID = -1;
+
+
+// Set var to toggle tutorial mode
+
+var tutorialMode = false;
+
 
 // Next, set properties for DOM elements
 
@@ -47,6 +57,24 @@ $( "#gray-bin" ).droppable({
 		itemsSorted++;
 	}
 });
+
+// initialize progress bar
+$( "#progress-value" ).progressbar({
+  max: 10000,
+  value: 0
+});
+
+// var to initialize progress bar value incrementor
+var progressValue = 0;
+
+// function to update progress bar
+
+var updateProgress = function() {
+	progressValue += gameSpeed;
+	$("#progress-value").progressbar( "option", "value", progressValue );
+};
+
+// Gameplay functions
 
 // Now, make an array containing different arrays of rubbish items by category
 
@@ -111,21 +139,28 @@ var generateItem = function() {
 		var randomCategory = getRandomCategory();
 
 		if (randomCategory == 0) {
-			console.log('Blue');
+			itemsGenerated++;
+			console.log('Blue item generated.');
+			console.log('Total items generated: ' + itemsGenerated);
 			return blueItem();
 		} else if (randomCategory == 1) {
-			console.log('Green');
+			itemsGenerated++;
+			console.log('Green item generated.');
+			console.log('Total items generated: ' + itemsGenerated);
 			return greenItem();
 		} else if (randomCategory == 2) {
-			console.log('Gray');
+			itemsGenerated++;
+			console.log('Gray item generated.');
+			console.log('Total items generated: ' + itemsGenerated);
 			return grayItem();
 		};
 
-		itemsGenerated++;
 
 }; // end generateItem function
 
+// declare variable for speed of generation in milliseconds
 
+var gameSpeed = 2000; // 2000 for hard, 3000 for easy, 1000 for extreme
 
 // Make function to play game (set interval for generateItem) at a set interval with a 1 minute timeout
 // At timeout, check for winner
@@ -136,13 +171,14 @@ var playGame = function() {
 	intervalID = setInterval(function() {
 		generateItem();
 		makeDraggable();
-		// check winner
-	}, 2000);
+		updateProgress();
+	}, gameSpeed);
 };
 
 $('#play-button').on("click", function(event) {
 	event.preventDefault();
 	playGame();
+	checkWinner();
 });
 
 // Make function to stop game and assign to stop button
@@ -171,17 +207,39 @@ $('#restart-button').on("click", function(event) {
 });
 
 
-// Make function to enter tutorial mode
+// Make function to toggle tutorial mode and assign to tutorial mode button
 
-// Function to check for winner 
+var toggleTutorialMode = function() {
+	if (tutorialMode) {
+		tutorialMode = false;
+		console.log("Tutorial mode is now set to OFF."); // alert user with popup
+	} else {
+		tutorialMode = true;
+		console.log("Tutorial mode is now set to ON."); // alert user with popup
+	};
+};
 
-// var checkWinner = function() {
-// 	if (itemsSorted == itemsGenerated) {
-// 		alert('You win!');
-// 		stopGame();
-// 	}
-// }
-// If win, popup win and show button to go to next round or stop, if Lose, popup lose and give option to replay or stop
+$('#tutorial-mode').on("click", function(event) {
+	event.preventDefault();
+	toggleTutorialMode();
+});
+
+// Function to check for winner
+// If win, popup win and show button to go to next round or stop
+// if lose, popup lose and give option to replay or stop
+
+var checkWinner = function() {
+	var timeoutID = setTimeout(function() {
+		if (itemsGenerated == itemsSorted) {
+		stopGame();
+		alert('Time\'s up! Looks like you made it!');
+		} else {
+		stopGame();
+		alert('Oh no! You didn\'t make it in time!');
+		}
+	}, 11000);
+};
+
 
 // Function next round, increment item generation interval, increment round counter
 // Or you can do an easy, medium, hard mode!

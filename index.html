@@ -2,9 +2,10 @@
 <html>
 <head>
 	<title>Sort it! Seattle - an environmentally friendly game</title>
+	<link rel="stylesheet" href="ui/jquery-ui.min.css">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
-	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="ui/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
 </head>
 <body>
@@ -13,6 +14,7 @@
 <button id="play-button">Play</button>
 <button id="restart-button">Restart</button>
 <button id="stop-button">Stop</button>
+<button id="tutorial-mode">Tutorial Mode</button>
 </div>
 <div id="game">
 	<div id="trash-chute">Trash Chute</div>
@@ -20,6 +22,9 @@
 		<div id="blue-bin">blue-bin</div>
 		<div id="green-bin">green-bin</div>
 		<div id="gray-bin">gray-bin</div>
+	</div>
+	<div id="progress-bar" class="ui-progressbar">
+		<div id="progress-value" class="ui-progressbar-value">
 	</div>
 </div>
 <div id="footer">Footer</div>
