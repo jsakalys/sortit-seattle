@@ -27,6 +27,14 @@ var timeoutID = -1;
 
 var tutorialMode = false;
 
+// declare variable for speed of item generation in milliseconds
+
+var gameSpeed = 2000; // 2000 for hard, 4000 for easy
+
+// declare variable for speed of round in milliseconds
+
+var roundSpeed = 30000; // 30 second game
+
 
 // Next, set properties for DOM elements
 
@@ -58,8 +66,8 @@ $( "#gray-bin" ).droppable({
 });
 
 // initialize progress bar
-$( "#progress-value" ).progressbar({
-  max: 10000,
+$( "#progress-bar" ).progressbar({
+  max: roundSpeed,
   value: 0
 });
 
@@ -70,7 +78,7 @@ var progressValue = 0;
 
 var updateProgress = function() {
 	progressValue += gameSpeed;
-	$("#progress-value").progressbar( "option", "value", progressValue );
+	$("#progress-bar").progressbar( "option", "value", progressValue );
 };
 
 // Gameplay functions
@@ -106,19 +114,19 @@ $('#trash-chute').append('<div class="gray-item">' + rubbish["garbage"][Math.flo
 var makeDraggable = function() {
 
 	$( ".blue-item" ).draggable({
-		containment: $('#game'),
+		containment: $('#main'),
 		cursor: 'move',
 		revert: 'invalid'
 	});
 
 	$( ".green-item" ).draggable({
-		containment: $('#game'),
+		containment: $('#main'),
 		cursor: 'move',
 		revert: 'invalid'
 	});
 
 	$( ".gray-item" ).draggable({
-		containment: $('#game'),
+		containment: $('#main'),
 		cursor: 'move',
 		revert: 'invalid'
 	});
@@ -157,10 +165,6 @@ var generateItem = function() {
 
 }; // end generateItem function
 
-// declare variable for speed of generation in milliseconds
-
-var gameSpeed = 2000; // 2000 for hard, 3000 for easy, 1000 for extreme
-
 // Make function to play game (set interval for generateItem) at a set interval with a 1 minute timeout
 // At timeout, check for winner
 // Assign to play button
@@ -185,7 +189,7 @@ $('#play-button').on("click", function(event) {
 var stopGame = function() {
 	clearInterval(intervalID);
 	clearTimeout(timeoutID);
-	$("#progress-value").progressbar( "option", "value", 0);
+	$("#progress-bar").progressbar( "option", "value", 0);
 	$('#trash-chute').html('');
 	progressValue = 0;
 	itemsGenerated = 0;
@@ -241,7 +245,7 @@ var checkWinner = function() {
 		stopGame();
 		alert('Oh no! You didn\'t make it in time!');
 		}
-	}, 12000);
+	}, roundSpeed + 2000);
 };
 
 

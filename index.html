@@ -4,7 +4,7 @@
 	<title>sort it! Seattle - an environmentally friendly game</title>
 	<link href='https://fonts.googleapis.com/css?family=Yellowtail|Grand+Hotel' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/normalize.css">
-	<link rel="stylesheet" href="ui/jquery-ui.min.css">
+	<!--<link rel="stylesheet" href="ui/jquery-ui.min.css">-->
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript" src="ui/jquery-ui.min.js"></script>
@@ -12,20 +12,21 @@
 </head>
 <body>
 <div id="main">
-	<div id="options">
-		<button id="play-button">Play</button>
-		<button id="restart-button">Restart</button>
-		<button id="stop-button">Stop</button>
-		<button id="tutorial-mode">Tutorial Mode</button>
-	</div>
 	<div id="game">
 		<div id="title">
 			<h3>sort it!</h3>
 			<h1>Seattle</h1>
 		</div>
+		<div id="options">
+			<button id="play-button">Play</button>
+			<button id="restart-button">Restart</button>
+			<button id="stop-button">Stop</button>
+			<button id="tutorial-mode">Tutorial Mode</button>
+		</div>
 		<div id="townhomes">
 		</div>
-		<div id="trash-chute">
+		<!-- Divs below are absolutely positioned -->
+		<div id="progress-bar" class="ui-progressbar">
 		</div>
 		<div id="bins">
 			<div id="blue-bin">
@@ -35,9 +36,7 @@
 			<div id="gray-bin">
 			</div>
 		</div>
-	</div>
-	<div id="progress-bar" class="ui-progressbar">
-		<div id="progress-value" class="ui-progressbar-value">	
+		<div id="trash-chute">
 		</div>
 	</div>
 	<div id="footer">
