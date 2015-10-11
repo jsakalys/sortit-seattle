@@ -2,14 +2,33 @@ body {
 	background-image: url("../img/background.png");
 	background-repeat: repeat-x;
 	background-position: top;
-	background-size: 5px 332px;
+	background-size: 3px 332px;
 	background-color: #319B47;
+}
+
+a:link, a:visited {
+	color: white;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
 }
 
 div {
 	font-family: Helvetica Neue, sans-serif;
 	text-align: center;
 	color: white;
+}
+
+div p {
+	margin: 0px;
+	padding: 0px;
+	padding-top: 50px;
+	padding-left: 25px;
+	padding-right: 25px;
+	line-height: 20px;
+	display: inline-block;
 }
 
 h1 {
@@ -131,16 +150,16 @@ h3 {
 	background-size: cover;
 }
 
-.blue-item {
-	background-color: lightBlue;
+.blue-item-tutorial {
+	color: #118EDD;
 }
 
-.green-item {
-	background-color: lightGreen;
+.green-item-tutorial {
+	color: #7AC026;
 }
 
-.gray-item {
-	background-color: lightGray;
+.gray-item-tutorial {
+	color: #CFD0D1;
 }
 
 #footer {

@@ -86,27 +86,36 @@ var updateProgress = function() {
 // Now, make an array containing different arrays of rubbish items by category
 
 var rubbish = {
-	"compostable" : ["banana peel", "eggshell", "tea bag", "flowers", "paper plate"],
-	"recycling" : ["milk carton", "cereal box", "paper cup", "yogurt container", "aluminum can"],
-	"garbage": ["aluminum foil", "plastic wrap", "foam carton", "rubber band", "plastic fork"],
+	"compostable" : ["banana peels", "apple cores", "potato skins", "egg shells", "tea bags", "dried flowers", "paper plates", "old bread", "fish bones", "coffe grounds", "coffee filters", "pizza boxes", "soiled paper", "paper bags"],
+	"recycling" : ["milk cartons", "cereal boxes", "paper cups", "yogurt containers", "aluminum cans", "food containers", "plastic bottles", "soup cartons", "cardboard boxes", "scrap paper", "glass bottles", "glass jars", "metal cans", "plastic cups", "colored plastics"],
+	"garbage": ["soiled foil", "plastic wrap", "foam containers", "rubber bands", "plastic utensils", "produce baskets", "twist ties", "latex gloves", "plastic gloves", "candy wrappers", "food wrappers"],
 }; // key: to access banana peel, you need rubbish["compostable"][0]
 
 // Make a function to create a random blue item with blue class
 // if tutorial mode == true, set aura
 var blueItem = function() {
-$('#trash-chute').append('<div class="blue-item">' + rubbish["recycling"][Math.floor((Math.random()*rubbish["recycling"].length))] + '</div>');
+	$('#trash-chute').append('<div class="blue-item"><p>' + rubbish["recycling"][Math.floor((Math.random()*rubbish["recycling"].length))] + '</p></div>');
+	if (tutorialMode) {
+	$('.blue-item').addClass('blue-item-tutorial');
+	};
 };
 
 // Make a function to create a green item with green class
 // if tutorial mode == true, set aura
 var greenItem = function() {
-$('#trash-chute').append('<div class="green-item">' + rubbish["compostable"][Math.floor((Math.random()*rubbish["compostable"].length))] + '</div>');
+	$('#trash-chute').append('<div class="green-item"><p>' + rubbish["compostable"][Math.floor((Math.random()*rubbish["compostable"].length))] + '</p></div>');
+	if (tutorialMode) {
+	$('.green-item').addClass('green-item-tutorial');
+	};
 };
 
 // Make a function to create a gray item with gray class
 // if tutorial mode == true, set aura
 var grayItem = function() {
-$('#trash-chute').append('<div class="gray-item">' + rubbish["garbage"][Math.floor((Math.random()*rubbish["garbage"].length))] + '</div>');
+	$('#trash-chute').append('<div class="gray-item"><p>' + rubbish["garbage"][Math.floor((Math.random()*rubbish["garbage"].length))] + '</p></div>');
+	if (tutorialMode) {
+	$('.gray-item').addClass('gray-item-tutorial');
+	};
 };
 
 // Make function to make newly generated items draggable
@@ -220,10 +229,10 @@ $('#restart-button').on("click", function(event) {
 var toggleTutorialMode = function() {
 	if (tutorialMode) {
 		tutorialMode = false;
-		console.log("Tutorial mode is now set to OFF."); // alert user with popup
+		console.log("Tutorial mode is now set to OFF."); // alert user with popup?
 	} else {
 		tutorialMode = true;
-		console.log("Tutorial mode is now set to ON."); // alert user with popup
+		console.log("Tutorial mode is now set to ON."); // alert user with popup?
 	};
 };
 
