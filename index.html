@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Sort it! Seattle - an environmentally friendly game</title>
+	<title>sort it! Seattle - an environmentally friendly game</title>
+	<link href='https://fonts.googleapis.com/css?family=Yellowtail|Grand+Hotel' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="ui/jquery-ui.min.css">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
@@ -9,24 +11,38 @@
 	<script type="text/javascript" src="js/script.js"></script>
 </head>
 <body>
-<div id="title">Sort it!<br>Seattle</div>
-<div id="options">Options
-<button id="play-button">Play</button>
-<button id="restart-button">Restart</button>
-<button id="stop-button">Stop</button>
-<button id="tutorial-mode">Tutorial Mode</button>
-</div>
-<div id="game">
-	<div id="trash-chute">Trash Chute</div>
-	<div id="bins">
-		<div id="blue-bin">blue-bin</div>
-		<div id="green-bin">green-bin</div>
-		<div id="gray-bin">gray-bin</div>
+<div id="main">
+	<div id="options">
+		<button id="play-button">Play</button>
+		<button id="restart-button">Restart</button>
+		<button id="stop-button">Stop</button>
+		<button id="tutorial-mode">Tutorial Mode</button>
+	</div>
+	<div id="game">
+		<div id="title">
+			<h3>sort it!</h3>
+			<h1>Seattle</h1>
+		</div>
+		<div id="townhomes">
+		</div>
+		<div id="trash-chute">
+		</div>
+		<div id="bins">
+			<div id="blue-bin">
+			</div>
+			<div id="green-bin">
+			</div>
+			<div id="gray-bin">
+			</div>
+		</div>
 	</div>
 	<div id="progress-bar" class="ui-progressbar">
-		<div id="progress-value" class="ui-progressbar-value">
+		<div id="progress-value" class="ui-progressbar-value">	
+		</div>
+	</div>
+	<div id="footer">
+		Copyright &copy; 2015 Julie Sakalys<br>All rights reserved.
 	</div>
 </div>
-<div id="footer">Footer</div>
 </body>
 </html>

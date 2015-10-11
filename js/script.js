@@ -1,5 +1,5 @@
 // Load script on ready
-//$('document').ready(function() {
+$('document').ready(function() {
 
 // First, set global variables
 
@@ -22,7 +22,6 @@ var intervalID = -1;
 // Make timeoutID for one round
 
 var timeoutID = -1;
-
 
 // Set var to toggle tutorial mode
 
@@ -185,7 +184,12 @@ $('#play-button').on("click", function(event) {
 
 var stopGame = function() {
 	clearInterval(intervalID);
+	clearTimeout(timeoutID);
+	$("#progress-value").progressbar( "option", "value", 0);
 	$('#trash-chute').html('');
+	progressValue = 0;
+	itemsGenerated = 0;
+	itemsSorted = 0;
 };
 
 $('#stop-button').on("click", function(event) {
@@ -229,7 +233,7 @@ $('#tutorial-mode').on("click", function(event) {
 // if lose, popup lose and give option to replay or stop
 
 var checkWinner = function() {
-	var timeoutID = setTimeout(function() {
+	timeoutID = setTimeout(function() {
 		if (itemsGenerated == itemsSorted) {
 		stopGame();
 		alert('Time\'s up! Looks like you made it!');
@@ -237,11 +241,11 @@ var checkWinner = function() {
 		stopGame();
 		alert('Oh no! You didn\'t make it in time!');
 		}
-	}, 11000);
+	}, 12000);
 };
 
 
 // Function next round, increment item generation interval, increment round counter
 // Or you can do an easy, medium, hard mode!
 
-//}); // end document load function
+}); // end document load function
