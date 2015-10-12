@@ -2,13 +2,15 @@
 <html>
 <head>
 	<title>sort it! Seattle - an environmentally friendly game</title>
-	<link href='https://fonts.googleapis.com/css?family=Yellowtail|Grand+Hotel' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Yellowtail|Grand+Hotel" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="css/normalize.css">
-	<!--<link rel="stylesheet" href="ui/jquery-ui.min.css">-->
+	<link rel="stylesheet" href="ui/jquery-ui.min.css">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript" src="ui/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
+	<script src="js/sweetalert.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/sweetalert.css">
 </head>
 <body>
 <div id="main">
@@ -18,10 +20,13 @@
 			<h1>Seattle</h1>
 		</div>
 		<div id="options">
-			<button id="play-button">Play</button>
-			<button id="restart-button">Restart</button>
-			<button id="stop-button">Stop</button>
-			<button id="tutorial-mode">Tutorial Mode</button>
+			<span id="gameplay-options">
+				<button id="play-button">Play</button>
+				<button id="restart-button">Restart</button>
+				<button id="stop-button">Stop</button>
+			</span>
+			<label for="toggle-tutorial">Tutorial Mode</label>
+			<input type="checkbox" id="toggle-tutorial" />
 		</div>
 		<div id="townhomes">
 		</div>
@@ -40,8 +45,11 @@
 		</div>
 	</div>
 	<div id="footer">
-	Information provided by <a href="http://www.seattle.gov/util/" target="_blank">Seattle Public Utilities</a><br>
-		Copyright &copy; 2015 <a href="http://juliesakalys.com">Julie Sakalys</a>
+	Information provided by <a href="http://www.seattle.gov/util/" target="_blank">Seattle Public Utilities</a>
+	<br>
+	Sweet Alert provided by <a href="http://tristanedwards.me/" target="_blank">Tristan Edwards</a>
+	<br>
+	Copyright &copy; 2015 <a href="http://juliesakalys.com">Julie Sakalys</a>
 	</div>
 </div>
 </body>

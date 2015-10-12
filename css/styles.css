@@ -61,6 +61,10 @@ h3 {
 	padding-top: 25px;
 }
 
+#options {
+	height: 50px;
+}
+
 #game {
 	width: 800px;
 	height: 600px;
@@ -79,10 +83,6 @@ h3 {
 	z-index: 100;
 }
 
-#options {
-	height: 50px;
-}
-
 #townhomes {
 	width: 800px;
 	height: 400px;
@@ -97,23 +97,6 @@ h3 {
 	position: absolute;
 	top: 525px;
 	left: 235px;
-}
-
-#progress-bar {
-	width: 800px;
-	height: 100px;
-	margin: 0;
-	position: absolute;
-	bottom: 10px;
-}
-
-.ui-progressbar-value {
-	height: 100px;
-	background-image: url("../img/garbage-truck.png");
-	background-position: right;
-	background-repeat: repeat-x;
-	background-color: transparent;
-	background-size: 800px 100px;
 }
 
 #blue-bin, #green-bin, #gray-bin {
@@ -160,6 +143,29 @@ h3 {
 
 .gray-item-tutorial {
 	color: #CFD0D1;
+}
+
+#progress-bar {
+	width: 800px;
+	height: 100px;
+	margin: 0;
+	position: absolute;
+	bottom: 10px;
+}
+
+.ui-progressbar {
+	background: none;
+	border: none;
+}
+
+.ui-progressbar-value {
+	height: 100px;
+	background-image: url("../img/garbage-truck.png");
+	background-position: right;
+	background-repeat: repeat-x;
+	background-color: transparent;
+	background-size: 800px 100px;
+	border: none;
 }
 
 #footer {
