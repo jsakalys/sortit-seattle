@@ -211,6 +211,7 @@ $('#stop-button').on("click", function(event) {
 var restartGame = function() {
 	stopGame();
 	playGame();
+	checkWinner();
 };
 
 // Assign function to restart button
