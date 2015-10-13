@@ -1,0 +1,178 @@
+body {
+	background-image: url("../img/background.png");
+	background-repeat: repeat-x;
+	background-position: top;
+	background-size: 3px 332px;
+	background-color: #319B47;
+}
+
+a:link, a:visited {
+	color: white;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+div {
+	font-family: Helvetica Neue, sans-serif;
+	text-align: center;
+	color: white;
+}
+
+div p {
+	margin: 0px;
+	padding: 0px;
+	padding-top: 50px;
+	padding-left: 25px;
+	padding-right: 25px;
+	line-height: 20px;
+	display: inline-block;
+}
+
+h1 {
+	font-family: 'Yellowtail', helvetica, sans-serif;
+	font-size: 72px;
+	margin: 0;
+	margin-top: -25px;
+	color: #777;
+}
+
+h3 {
+	font-family: 'Grand Hotel', helvetica, sans-serif;
+	font-size: 28px;
+	margin: 0;
+	margin-top: 0px;
+	margin-left: 25px;
+	color: #777;
+}
+
+#main {
+	width: 800px;
+	margin: 0 auto;
+	background-color: #319B47;
+}
+
+#title {
+	width: 800px;
+	height: 125px;
+	margin: 0 auto;
+	padding-top: 25px;
+}
+
+#options {
+	height: 50px;
+}
+
+#game {
+	width: 800px;
+	height: 600px;
+	margin: 0 auto;
+	position: relative;
+	background-image: url("../img/seattle-rainier.png");
+	background-size: cover;
+}
+
+#trash-chute {
+	height: 125px;
+	width: 125px;
+	margin: 0 auto;
+	margin-top: 200px;
+	position: relative;
+	z-index: 100;
+}
+
+#townhomes {
+	width: 800px;
+	height: 400px;
+	position: absolute;
+	top: 225px;
+	background-image: url("../img/townhomes.png");
+	background-size: cover;
+}
+
+#bins {
+	height: 150px;
+	position: absolute;
+	top: 525px;
+	left: 235px;
+}
+
+#blue-bin, #green-bin, #gray-bin {
+	width: 100px;
+	height: 150px;
+	margin: 0px 5px;
+	display: inline-block;
+	background-size: cover;
+}
+
+#blue-bin {
+	background-image: url("../img/recycling-bin.png");
+}
+
+#green-bin {
+	background-image: url("../img/compost-bin.png");
+}
+
+#gray-bin {
+	background-image: url("../img/garbage-bin.png");
+}
+
+.blue-item, .green-item, .gray-item {
+	width: 125px;
+	height: 125px;
+	line-height: 125px;
+	text-align: center;
+	vertical-align: middle;
+	position: absolute;
+	top: 0;
+	left: 0;
+	float: left;
+	background-image: url("../img/trash-item.png");
+	background-size: cover;
+}
+
+.blue-item-tutorial {
+	color: #118EDD;
+}
+
+.green-item-tutorial {
+	color: #7AC026;
+}
+
+.gray-item-tutorial {
+	color: #CFD0D1;
+}
+
+#progress-bar {
+	width: 800px;
+	height: 100px;
+	margin: 0;
+	position: absolute;
+	bottom: 10px;
+}
+
+.ui-progressbar {
+	background: none;
+	border: none;
+}
+
+.ui-progressbar-value {
+	height: 100px;
+	background-image: url("../img/garbage-truck.png");
+	background-position: right;
+	background-repeat: repeat-x;
+	background-color: transparent;
+	background-size: 800px 100px;
+	border: none;
+}
+
+#footer {
+	width: 800px;
+	height: 200px;
+	margin: 0 auto;
+	font-size: 12px;
+	padding-top: 150px;
+}
+
