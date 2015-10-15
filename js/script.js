@@ -168,15 +168,12 @@ var toggleTutorialMode = function() {
 	};
 };
 
-<<<<<<< HEAD
-=======
 // Assign function to howto button
 $('#howto-button').on("click", function(event) {
 	event.preventDefault();
 	swal("How to play", "Press the play button to start, and race the clock by sorting the rubbish items into their proper container. Be quick! If you don't sort everything properly before the garbage collector arrives you will fail. Press tutorial mode button to display helpful color-coded hints as to what rubbish belongs where.");
 });
 
->>>>>>> master
 // Assign function to tutorial mode toggle button
 $('#toggle-tutorial').on("click", function(event) {
 	event.preventDefault();
