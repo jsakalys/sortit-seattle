@@ -6,6 +6,10 @@ body {
 	background-color: #319B47;
 }
 
+button {
+	outline: none;
+}
+
 a:link, a:visited {
 	color: white;
 	text-decoration: none;
